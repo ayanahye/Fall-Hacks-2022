@@ -1,4 +1,4 @@
-# ** Project for Fall Hacks 2022 Hackathon **
+# **Project for Fall Hacks 2022 Hackathon**
 
 ### Name: 
 > Ayana Hussain
