@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>test</title>
+  <link href="{{ url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="header">
+      <image class="img" src="{{ url_for('static', filename='images/Leap_second_free.png')}}" rel="stylesheet" type="text/css" /> 
+    </div>
+    <div class="menu">
+      <div class="content-menu">
+        <h3 class="center-text">Website Blocker and Unblocker</h3>
+        <p class="desc">hi, website must be in the form 'www.[websitename].com/org/ca</p>
+    </div>
+    </div>
+    <div class="sidebar">
+      <div class="box1">
+        <h2>Contact Me</h2>
+        <ul>
+          <li>Email: once.ayana@gmail</li>
+          <li>Phone: 604-123-456</li>
+        </ul>
+      </div>
+      <div class="box2">
+        <h4>This is my project for the <u>Fall Hacks 2022</u> Hackathon</h4>
+        <p class="sidebartext">Imagine your on a <strong>fishy</strong> website and it starts acting weird..then you pull up this website in the <strong>last minute</strong> and there you go. I saved your life.</p>
+      </div>
+    </div>
+    <div class="right">
+        <form method="POST" id="f">
+            <input id="website" name="website" autocomplete="off" placeholder="www.facebook.com" class="input">
+            <p class="desc">{{ website }}</p>
+            <div class="buttons">
+                <input name="submit" id="submit" type="submit" value="Block" onClick="equation('{{website}}', 'unblock')">
+                <input name="submit" id="submit" type="submit" value="Unblock" onClick="equation('{{website}}', 'blocker')">
+            </div>
+        </form>
+        <p class="desc">Success: {{ success }}</p>
+    </div>
+    <div class="footer">Copyright Ayana Hussain</div>
+  </div>
+</body>
+
+</html>
