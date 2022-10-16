@@ -13,7 +13,7 @@
 > datetime
 
 ### *IMPORTANT* ###
-In order to run this code you need to have administration access on whatever software your using. To get admin, find the text editor of your choice, right click it and click "Run as Admin".
+In order to run this code you need to have administration access on whatever software you're using. To get admin powers, find the text editor of your choice, right click it and click "Run as Admin".
 
 ### To run code:
 Firstly, ensure all modules are installed then: 
