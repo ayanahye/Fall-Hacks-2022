@@ -1,7 +1,11 @@
 # a program that blocks apps that pull you away from what youre supposed to be doing.
 from datetime import datetime 
 
-end_time = datetime(2022, 10, 15, 20)
+d = datetime.now()
+d = int(d.strftime("%d"))
+
+end_time = datetime(2022, 10, d+1, 20)
+
 # must run the program as an administrator
 from flask import Flask, request, redirect, url_for, render_template
 # host is an os file that maps hostnames to ip addresses, 
