@@ -1,5 +1,6 @@
 # a program that blocks apps that pull you away from what youre supposed to be doing.
 from datetime import datetime 
+import time
 
 d = datetime.now()
 d = int(d.strftime("%d"))
@@ -7,7 +8,7 @@ d = int(d.strftime("%d"))
 end_time = datetime(2022, 10, d+1, 20)
 
 # must run the program as an administrator
-from flask import Flask, request, redirect, url_for, render_template
+from flask import Flask, request, redirect, url_for, render_template, Response
 # host is an os file that maps hostnames to ip addresses, 
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ app = Flask(__name__)
 @app.route("/index.html")
 @app.route("/")
 def index():
-    return render_template("index.html")
+    current_time = datetime.datetime.now()
+    return render_template("index.html", current_time=str(current_time))
 
 @app.route("/index.html", methods = ['POST', 'GET'])
 @app.route('/', methods = ['POST', 'GET'])
@@ -118,7 +120,14 @@ def question(website, button):
     else:
         blocker(website)
 
-
+"""@app.route('/content') # render the content a url differnt from index. This will be streamed into the iframe
+def content():
+    def timer(t):
+        for i in range(t):
+            time.sleep(5) #put 60 here if you want to have seconds
+            yield str(i)
+    return Response(timer(10), mimetype='text/html') #at the moment the time value is hardcoded in the function just for simplicity
+"""
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
